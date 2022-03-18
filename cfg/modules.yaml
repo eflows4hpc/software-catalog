@@ -1,0 +1,10 @@
+modules:
+  enable:
+  - lmod
+  lmod:
+    core_compilers:
+    - gcc
+  default:
+    lmod:
+      core_compilers:
+      - gcc@7.5.0
