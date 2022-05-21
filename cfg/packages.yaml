@@ -7,6 +7,10 @@ packages:
     externals:
     - spec: automake@1.15.1
       prefix: /usr
+  cmake:
+    externals:
+    - spec: cmake@3.10.2
+      prefix: /usr
   diffutils:
     externals:
     - spec: diffutils@3.6
@@ -44,6 +48,10 @@ packages:
     externals:
     - spec: m4@1.4.18
       prefix: /usr
+  ncurses:
+    externals:
+    - spec: ncurses@6.1.20180127+symlinks+termlib abi=5
+      prefix: /usr
   openssl:
     externals:
     - spec: openssl@1.1.1
@@ -52,15 +60,39 @@ packages:
     externals:
     - spec: perl@5.26.1~cpanm+shared+threads
       prefix: /usr
+  pkgconf:
+    externals:
+    - spec: pkgconf@0.28
+      prefix: /usr
   python:
     externals:
-    - spec: python@3.6.9+bz2+ctypes+dbm+lzma+nis+pyexpat~pythoncmd+readline+sqlite3+ssl~tix~tkinter+uuid+zlib
+    - spec: python@3.6.9+bz2+ctypes+dbm+lzma+nis+pyexpat~pythoncmd+readline+sqlite3+ssl~tix~tkinter+uuid+zlib 
+      prefix: /usr
+  sqlite:
+    externals:
+    - spec: sqlite@3.22.0+fts~functions+rtree
       prefix: /usr
   xz:
     externals:
     - spec: xz@5.2.2
       prefix: /usr
+  pkg-config:
+    externals:
+    - spec: pkg-config@0.29.1
+      prefix: /usr
   openjdk:
     externals:
     - spec: openjdk@1.8.0_312
       prefix: /usr/lib/jvm/java-8-openjdk-amd64/
+  zlib:
+    externals:
+    - spec: zlib@1.2.11
+      prefix: /usr
+  bzip2:
+    externals:
+    - spec: bzip2@1.0.6
+      prefix: /
+  tar:
+    externals:
+    - spec: tar@1.29
+      prefix: /
