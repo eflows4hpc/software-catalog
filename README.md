@@ -11,7 +11,7 @@ software-catalog
   |- packages
   |    |- software_1
   |    |    |- package.py		Installation description following the Spack package format
-  |    |    |- invokation.json          Description of the software invocation
+  |    |    |- invocation.json          Description of the software invocation
   |    |       ...
   |    |- software_2    
   |          ....
