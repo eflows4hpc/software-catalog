@@ -29,13 +29,14 @@ class Kratos(CMakePackage):
 
     # FIXME: Add a proper url for your package's homepage here.
     homepage = "https://www.cimne.com/kratos/"
-    url      = "https://github.com/KratosMultiphysics/Kratos/archive/refs/tags/v9.1.tar.gz"
+    url      = "https://github.com/KratosMultiphysics/Kratos/archive/refs/tags/v9.1.4.tar.gz"
 
     # FIXME: Add a list of GitHub accounts to
     # notify when the package is updated.
     # maintainers = ['github_user1', 'github_user2']
 
     version('9.1', sha256='2a2415089ffefb288b61e7d9f8dab55564c7b84498c8edfa5677560c90c97b64')
+    version('9.1.4', sha256='efe255921b279bc866af2311a6da96c3d11c4f5c3d11ddbe3f2d2751178bd81f')
 
     # FIXME: Add dependencies if required.
     depends_on('boost')
@@ -47,11 +48,14 @@ class Kratos(CMakePackage):
     variant('mmg', default=False, description='Builds a MMG version of the library')
     depends_on('mmg', when='+mmg')
     variant('apps', default='none', multi=True, description='Builds apps version of the library')
-    
+   
+    def url_for_version(self, version):
+        url = "https://github.com/KratosMultiphysics/Kratos/archive/refs/tags/v{0}.tar.gz"
+        return url.format(version)
+
     def setup_build_environment(self, env):
         apps = self.spec.variants['apps'].value
         if apps != 'none':
-            print("***** APPS: " + str(apps) + "env: " + str(self))
             kratos_apps=""
             applications_path=os.path.join(self.stage.source_path,  "applications")
             for app in apps:
