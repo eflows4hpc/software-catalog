@@ -1,0 +1,15 @@
+{
+	"execution" : {
+		"type":"task"
+	},
+	"constraints" : {
+		"computing_units": "$KRATOS_CUS"
+	},
+	"parameters" : {
+    		"returns" : 1,
+		"model" : "IN",
+		"parameters" : "IN",
+		"sample": "IN",
+		"rom" : "FILE_IN"
+  	}
+}

@@ -88,11 +88,15 @@ packages:
     externals:
     - spec: zlib@1.2.11
       prefix: /usr
-  bzip2:
-    externals:
-    - spec: bzip2@1.0.6
-      prefix: /
+  #bzip2:
+  #  externals:
+  #  - spec: bzip2@1.0.6
+  #    prefix: /
   tar:
     externals:
     - spec: tar@1.29
+      prefix: /
+  cpio:
+    externals:
+    - spec: cpio@2.12
       prefix: /

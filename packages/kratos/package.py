@@ -40,14 +40,17 @@ class Kratos(CMakePackage):
 
     # FIXME: Add dependencies if required.
     depends_on('boost')
-    depends_on('python@3:')
-    
+    depends_on('python@3.6:')
+    depends_on('blas')
+
     #variant
     variant('mpi', default=False, description='Builds a MPI version of the library')
     depends_on('mpi', when='+mpi')
     variant('mmg', default=False, description='Builds a MMG version of the library')
     depends_on('mmg', when='+mmg')
     variant('apps', default='none', multi=True, description='Builds apps version of the library')
+    variant('eigen_mkl', default=False, description='Builds a Eigen_mkl version of the library')
+    depends_on('intel-mkl', when='+eigen_mkl')
    
     def url_for_version(self, version):
         url = "https://github.com/KratosMultiphysics/Kratos/archive/refs/tags/v{0}.tar.gz"
@@ -61,20 +64,25 @@ class Kratos(CMakePackage):
             for app in apps:
                 kratos_apps = kratos_apps + os.path.join(applications_path,  app) + ";"
             env.set('KRATOS_APPLICATIONS', kratos_apps)
+        print("PYTHON_EXECUTABLE:" + str(self.spec['python'].prefix.bin + "/python3"))
+        env.set('PYTHON_EXECUTABLE',self.spec['python'].prefix.bin + "/python3")
 
     def setup_run_environment(self, env):
         env.prepend_path('LD_LIBRARY_PATH', self.prefix.lib)
         env.prepend_path('PYTHONPATH', self.prefix)
+
 
     def cmake_args(self):
         # Add arguments other than
         # CMAKE_INSTALL_PREFIX and CMAKE_BUILD_TYPE
         args = []
         if self.spec.variants['mpi'].value == True:
-            args.append('USE_MPI=ON')
+            args.append('-DUSE_MPI=ON')
         else:
-            args.append('USE_MPI=OFF')
+            args.append('-DUSE_MPI=OFF')
         if self.spec.variants['mmg'].value == True:
-            args.append('USE_MMG=ON')
+            args.append('-DUSE_MMG=ON')
+        if self.spec.variants['eigen_mkl'].value == True:
+            args.append('-DUSE_EIGEN_MKL=ON')
         return args
 
