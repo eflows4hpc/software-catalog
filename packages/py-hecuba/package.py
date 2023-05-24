@@ -4,7 +4,7 @@ from spack.package import *
 class PyHecuba(PythonPackage):
     git = "https://github.com/bsc-dd/hecuba.git"
     
-    version("main", branch="main")
+    version("master", branch="master")
     version("1.2.4", tag="v1.2.4")
 
     depends_on("python@3.6:", type=("build", "link", "run"))
