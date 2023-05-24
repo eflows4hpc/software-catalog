@@ -37,7 +37,7 @@ class Compss(Package):
     version('2.10',       sha256='0795ca7674f1bdd0faeac950fa329377596494f64223650fe65a096807d58a60', preferred=True)
 
     # dependencies. 
-    depends_on('python@3.6')
+    depends_on('python@3.6:')
     depends_on('openjdk')
     depends_on('boost')
     depends_on('libxml2')
