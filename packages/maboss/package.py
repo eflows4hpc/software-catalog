@@ -23,7 +23,7 @@
 from spack.package import *
 
 
-class Maboss(Package):
+class Maboss(MakefilePackage):
     """FIXME: Put a proper description of your package here."""
 
     # FIXME: Add a proper url for your package's homepage here.
@@ -33,13 +33,10 @@ class Maboss(Package):
     # FIXME: Add a list of GitHub accounts to
     # notify when the package is updated.
     # maintainers = ["github_user1", "github_user2"]
-
+    build_directory = 'engine/src'
     version("2.4.1", sha256="72f131f2171ba475da2fd34ba5a3e45d879d71d74ce863c7a71232ab2933ef77")
 
     # FIXME: Add dependencies if required.
-    # depends_on("foo")
+    depends_on("flex", type="build")
+    depends_on("bison", type="build")
 
-    def install(self, spec, prefix):
-        # FIXME: Unknown build system
-        make()
-        make("install")
