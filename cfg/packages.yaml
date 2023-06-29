@@ -107,7 +107,7 @@ packages:
   openjdk:
     externals:
     - spec: openjdk@1.8.0_312
-      prefix: /usr/lib/jvm/java-8-openjdk-amd64/
+      prefix: /usr/lib/jvm/java-8/
   zlib:
     externals:
     - spec: zlib@1.2.11
