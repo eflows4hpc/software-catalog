@@ -59,7 +59,7 @@ class THyseaLb(CMakePackage):
     def install(self, spec, prefix):
         #print("***** Calling super install ****") 
         #super().install(spec, prefix)
-        print("***** Coping TsunamiHySEA binary to bin ****")
+        print("***** Coping get_load_balancing binary to bin ****")
         mkdirp(self.prefix.bin)
-        install(self.build_directory + '/TsunamiHySEA', self.prefix.bin)
+        install(self.build_directory + '/get_load_balancing', self.prefix.bin)
 
