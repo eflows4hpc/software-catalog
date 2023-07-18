@@ -1,4 +1,20 @@
 packages:
+  gcc:
+    externals:
+    - spec: gcc@8.4.0 languages=c,c++,fortran
+      prefix: /usr
+      extra_attributes:
+        compilers:
+          c: /usr/bin/x86_64-linux-gnu-gcc-8
+          cxx: /usr/bin/x86_64-linux-gnu-g++-8
+          fortran: /usr/bin/x86_64-linux-gnu-gfortran-8
+    - spec: gcc@9.4.0 languages=c,c++,fortran
+      prefix: /usr
+      extra_attributes:
+        compilers:
+          c: /usr/bin/x86_64-linux-gnu-gcc-9
+          cxx: /usr/bin/x86_64-linux-gnu-g++-9
+          fortran: /usr/bin/x86_64-linux-gnu-gfortran-9
   ncurses:
     externals:
     - spec: ncurses@6.2.20200212+symlinks+termlib abi=6
@@ -15,15 +31,6 @@ packages:
     externals:
     - spec: perl@5.30.0~cpanm+open+shared+threads
       prefix: /usr
-  gcc:
-    externals:
-    - spec: gcc@9.4.0 languages=c,c++,fortran
-      prefix: /usr
-      extra_attributes:
-        compilers:
-          c: /usr/bin/x86_64-linux-gnu-gcc-9
-          cxx: /usr/bin/x86_64-linux-gnu-g++-9
-          fortran: /usr/bin/x86_64-linux-gnu-gfortran-9
   tar:
     externals:
     - spec: tar@1.30
