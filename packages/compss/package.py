@@ -32,8 +32,8 @@ class Compss(Package):
 
     # notify when the package is updated.
     maintainers = ['jorgee', 'compsuperscalar']
-
-    version("eflows4hpc", sha256="0251c82cdd4557ed9026f6296f7c475f3d15c3e1fc13edd04c7ff1399328d2b3")
+    version("eflows4hpc", sha256="9c226e1c4ffd95dfb4074998d2ac314b8239d4c19ad1d5b01834cc2ad35c54ee")
+    #version("eflows4hpc", sha256="0251c82cdd4557ed9026f6296f7c475f3d15c3e1fc13edd04c7ff1399328d2b3")
     version("3.2", sha256="f32825d7f26bde13cd3699f0aea14da18632b30cf08f113a06ae050033efc837", preferred=True)
     version("3.1", sha256="53880443567269faa724d1908a6bc4d82998be3cc93c77386f620c4c8a72e60d")
     version("3.0", sha256="3a84e0c6cd84aea155abf08370b1ad5bf5f65c99d4b17d70346c6457e7d0b215")
