@@ -51,7 +51,8 @@ class Compss(Package):
     depends_on('libtool', type='build')
     depends_on('m4', type='build')
     depends_on('py-setuptools', when="@3.1:", type='build')
-
+    depends_on('py-setuptools', when="@eflows4hpc", type='build')
+    
     def install(self, spec, prefix):
         import os
         print("Prefix: " + str(prefix))
