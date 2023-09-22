@@ -32,11 +32,12 @@ class PyDislib(PythonPackage):
     # FIXME: ensure the package is not available through PyPI. If it is,
     # re-run `spack create --force` with the PyPI URL.
     url      = "https://github.com/bsc-wdc/dislib/archive/refs/tags/v0.7.1.tar.gz"
-
+    git = "https://github.com/bsc-wdc/dislib.git"
     # FIXME: Add a list of GitHub accounts to
     # notify when the package is updated.
     # maintainers = ['github_user1', 'github_user2']
-
+    version('master', branch='master', submodules=True)
+    version("0.8.0", sha256="76dde752ce681e0ffa852fd44c9fc7957502382be05a2f0174382de95e3bc593")
     version('0.7.1', sha256='29f4ad4fe76c42c206c465cc77db38bb86c2bee3aac340266df58352538311e5')
 
     # FIXME: Add dependencies if required. Only add the python dependency
