@@ -23,35 +23,33 @@
 from spack import *
 
 
-class PyDislib(PythonPackage):
+class PyEddl(PythonPackage):
     """FIXME: Put a proper description of your package here."""
 
-    # FIXME: Add a proper url for your package's homepage here.
-    homepage = "https://dislib.bsc.es"
+    homepage = "https://deephealthproject.github.io/pyeddl/"
 
-    # FIXME: ensure the package is not available through PyPI. If it is,
-    # re-run `spack create --force` with the PyPI URL.
-    url      = "https://github.com/bsc-wdc/dislib/archive/refs/tags/v0.7.1.tar.gz"
-    git = "https://github.com/bsc-wdc/dislib.git"
+    url      = "https://github.com/deephealthproject/pyeddl/archive/refs/tags/1.3.1.tar.gz"
+    git = "https://github.com/deephealthproject/pyeddl.git"
     # FIXME: Add a list of GitHub accounts to
     # notify when the package is updated.
     # maintainers = ['github_user1', 'github_user2']
     version('master', branch='master', submodules=True)
-    version("0.8.0", sha256="76dde752ce681e0ffa852fd44c9fc7957502382be05a2f0174382de95e3bc593")
-    version('0.7.1', sha256='29f4ad4fe76c42c206c465cc77db38bb86c2bee3aac340266df58352538311e5')
+    version("1.3.1", sha256="97d1f263320ba3522904a29650ca9cfdb247510583a7ca4a8bc5312c7415405d")
 
     # FIXME: Add dependencies if required. Only add the python dependency
     # if you need specific versions. A generic python dependency is
     # added implicity by the PythonPackage class.
-    depends_on('compss@2.10:', type='run')
-    depends_on('python@3.6:', type=('build', 'run'))
-    #depends_on('py-setuptools', type='build')
-    depends_on('py-scikit-learn@0.23.2^py-scipy@1.5.0^py-numpy@1.19.5', type=('run'))
-    #depends_on('py-scikit-learn', type=('run'))
-    #depends_on('py-cvxpy', type=('run'))
+    depends_on('eddl')
+    depends_on('python@3.8:', type=('build', 'run'))
+    depends_on('py-setuptools', type='build')
+    depends_on('py-pybind11@:2.5.9', type='build')
+    depends_on('py-pytest', type='build')
+    depends_on('py-numpy')
 
+    """
     def build_args(self, spec, prefix):
         # FIXME: Add arguments other than --prefix
         # FIXME: If not needed delete this function
         args = []
         return args
+    """
