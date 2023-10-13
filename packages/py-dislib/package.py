@@ -43,7 +43,7 @@ class PyDislib(PythonPackage):
     # FIXME: Add dependencies if required. Only add the python dependency
     # if you need specific versions. A generic python dependency is
     # added implicity by the PythonPackage class.
-    depends_on('compss@2.10:', type='run')
+    depends_on('compss', type='run')
     depends_on('python@3.6:', type=('build', 'run'))
     #depends_on('py-setuptools', type='build')
     depends_on('py-scikit-learn@0.23.2^py-scipy@1.5.0^py-numpy@1.19.5', type=('run'))
