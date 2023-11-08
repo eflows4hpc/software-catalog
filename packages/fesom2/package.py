@@ -33,7 +33,8 @@ class Fesom2(CMakePackage):
     # FIXME: Add a list of GitHub accounts to
     # notify when the package is updated.
     # maintainers = ['github_user1', 'github_user2']
-    version('eflows4hpc', branch='eflows4hpc_hecuba_integration', submodules=True)
+    version('eflows4hpc', branch='eflows_hecuba_templates_update', submodules=True)
+    version('eflows4hpc_y2', branch='eflows4hpc_hecuba_integration', submodules=True)
     version('2.1.1', sha256='a4c9006489f9010be11ed30b8249efc63af8125d9214e94977e2dd16c75ecc38')
     version('2.1.0', sha256='b46e8a22d160b0e34915f573f4ca1f9f08f5be121c3b814b15e0baa592490aa4')
 
