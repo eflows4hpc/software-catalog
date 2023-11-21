@@ -33,6 +33,7 @@ class PyParsoda(PythonPackage):
     maintainers = ["sv-giampa", "lorisbel"]
 
     version("1.1.0", sha256="16d5bdab98dea3a176d809e60c43250461371e9bd58fc9be60930b6298907ba4")
+    version("1.2.0", sha256="49e26e51a6b51fc3ae52599b380a6f027c9bafefe8d9e04886e75ce621f3f4d3")
     
     depends_on('python@3.8:', type=('build', 'run'))
     depends_on("py-setuptools", type="build")
