@@ -34,7 +34,7 @@ class Fesom2(CMakePackage):
     # notify when the package is updated.
     # maintainers = ['github_user1', 'github_user2']
     version('eflows4hpc', branch='eflows_hecuba_templates_update', submodules=True)
-    version('eflows4hpc_y2', branch='eflows4hpc_hecuba_integration', submodules=True)
+    version('y2_eflows4hpc', branch='eflows4hpc_hecuba_integration', submodules=True)
     version('2.1.1', sha256='a4c9006489f9010be11ed30b8249efc63af8125d9214e94977e2dd16c75ecc38')
     version('2.1.0', sha256='b46e8a22d160b0e34915f573f4ca1f9f08f5be121c3b814b15e0baa592490aa4')
 
@@ -42,11 +42,13 @@ class Fesom2(CMakePackage):
     depends_on('mpi')
     depends_on('netcdf-fortran')
     depends_on('blas')
+    depends_on('py-hecuba', when='+hecuba')
     
     variant('hecuba', default=False, description='Builds a MPI version of the library')
 
-    #def setup_build_environment(self, env):
-        #env.set('CC', self.spec['mpi'].mpicc)
+    def setup_build_environment(self, env):
+        if self.spec.variants['hecuba'].value == True:
+            env.set('HECUBA_ROOT', self.spec['py-hecuba'].prefix)
         #env.set('FC',self.spec['mpi'].mpifc) 
         #env.set('CXX', self.spec['mpi'].mpicxx)
         #env.set('F77', self.spec['mpi'].mpif77)
@@ -60,7 +62,10 @@ class Fesom2(CMakePackage):
         #super().install(spec, prefix)
         print("***** Coping fesom binary to bin ****")
         mkdirp(self.prefix.bin)
+        mkdirp(self.prefix.lib)
         install(self.stage.source_path+'/bin/fesom.x', self.prefix.bin)
+        install(self.build_directory + '/src/io_hecuba/libio_hecuba.so', self.prefix.lib)
+    
     def patch(self):
         microarch = self.spec.target
         comp = self.spec.compiler
@@ -76,9 +81,9 @@ class Fesom2(CMakePackage):
         # FIXME: If not needed delete this function
         args = []
         if self.spec.variants['hecuba'].value == True:
-            args.append('-DUSE_HECUBA=ON')
+            args.append('-DUSE_HECUBAIO=ON')
         else:
-            args.append('-DUSE_HECUBA=OFF')
+            args.append('-DUSE_HECUBAIO=OFF')
         args.append(self.define('CMAKE_C_COMPILER', spec['mpi'].mpicc))
         args.append(self.define('CMAKE_CXX_COMPILER', spec['mpi'].mpicxx))
         args.append(self.define('CMAKE_Fortran_COMPILER', spec['mpi'].mpifc))
