@@ -1,0 +1,12 @@
+{
+	"execution" : {
+		"type":"task"
+	},
+	"constraints" : {
+		"computing_units": "$KRATOS_CUS"
+	},
+	"parameters" : {
+    		"returns" : 1,
+		"parameter_file_name" : "FILE_IN"
+  	}
+}

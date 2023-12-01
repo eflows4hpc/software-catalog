@@ -34,7 +34,9 @@ class Kratos(CMakePackage):
     # FIXME: Add a list of GitHub accounts to
     # notify when the package is updated.
     # maintainers = ['github_user1', 'github_user2']
-
+    version("9.4", sha256="c78e505b5963e860d1ebe6d970e4469fac9f88aa88b5e2ad69abc0fa8c09f94e")
+    version("9.3", sha256="20b04078b2bcfe3f7cc062fe9493538449079f360feba17a39177ab5c3bbfac4")
+    version("9.2", sha256="5863e18220f04a5d8066ceea93eb682d93be19188ef9032fd5778331aa1b48f3")
     version('9.1', sha256='2a2415089ffefb288b61e7d9f8dab55564c7b84498c8edfa5677560c90c97b64')
     version('9.1.4', sha256='efe255921b279bc866af2311a6da96c3d11c4f5c3d11ddbe3f2d2751178bd81f')
 
