@@ -1,0 +1,14 @@
+{
+	"execution" : {
+		"type":"task"
+	},
+	"constraints" : {
+		"computing_units": "$KRATOS_CUS"
+	},
+	"parameters" : {
+    		"returns" : 2,
+		"serialized_parameters" : "IN",
+		"sample" : "IN",
+		"rom_folder" : "DIRECTORY_IN"
+  	}
+}

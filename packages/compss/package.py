@@ -32,9 +32,15 @@ class Compss(Package):
 
     # notify when the package is updated.
     maintainers = ['jorgee', 'compsuperscalar']
-
-    version('2.10-riscv', sha256='04c0a7dfde86d541fee9281e588bc725e84266f7f18754d743924a584d9650f2')
-    version('2.10',       sha256='0795ca7674f1bdd0faeac950fa329377596494f64223650fe65a096807d58a60', preferred=True)
+    version("eflows4hpc", sha256="a85efd592b85fe3392497da85d192e7543e6ac1e8333c6c3f8ca7f0777a54aaf")
+    #version("eflows4hpc", sha256="2f187a447074e87989b73d23ca4e855c0123f82bfc4ba31628ccbe6a1517d5f4")
+    #version("eflows4hpc", sha256="0251c82cdd4557ed9026f6296f7c475f3d15c3e1fc13edd04c7ff1399328d2b3")
+    version("3.2", sha256="f32825d7f26bde13cd3699f0aea14da18632b30cf08f113a06ae050033efc837", preferred=True)
+    version("3.1", sha256="53880443567269faa724d1908a6bc4d82998be3cc93c77386f620c4c8a72e60d")
+    version("3.0", sha256="3a84e0c6cd84aea155abf08370b1ad5bf5f65c99d4b17d70346c6457e7d0b215")
+    version("2.10.1", sha256="0a983a85b53c3a1c82ea63aedf54e353c5627ba25b85c1cda1bbea5a35ba08af")
+    version("2.10-riscv", sha256="2170abfc484234b1384a4ec698acfe045ffca56806624e6237f5dab39bfe86bf")
+    version("2.10", sha256="0795ca7674f1bdd0faeac950fa329377596494f64223650fe65a096807d58a60")
 
     # dependencies. 
     depends_on('python@3.6:')
@@ -45,12 +51,17 @@ class Compss(Package):
     depends_on('automake', type='build')
     depends_on('libtool', type='build')
     depends_on('m4', type='build')
-
+    depends_on('py-setuptools', when="@3.1:", type='build')
+    depends_on('py-setuptools', when="@eflows4hpc", type='build')
+    
     def install(self, spec, prefix):
         import os
         print("Prefix: " + str(prefix))
         install_script = Executable('./install')
-        install_script('-A', '--only-python-3', prefix.compss)
+        if spec.satisfies("@2.10"):
+            install_script('-A', '--only-python-3', prefix.compss)
+        else: 
+            install_script(prefix.compss)
         print("Dirs: " +str(os.listdir(str(prefix))))
 
 

@@ -23,32 +23,33 @@
 from spack import *
 
 
-class PyDislib(PythonPackage):
+class PyEzyrb(PythonPackage):
     """FIXME: Put a proper description of your package here."""
 
     # FIXME: Add a proper url for your package's homepage here.
-    homepage = "https://dislib.bsc.es"
+    homepage = ""
 
     # FIXME: ensure the package is not available through PyPI. If it is,
     # re-run `spack create --force` with the PyPI URL.
-    url      = "https://github.com/bsc-wdc/dislib/archive/refs/tags/v0.7.1.tar.gz"
-    git = "https://github.com/bsc-wdc/dislib.git"
+    git      = "https://github.com/mathLab/EZyRB.git"
+
     # FIXME: Add a list of GitHub accounts to
     # notify when the package is updated.
     # maintainers = ['github_user1', 'github_user2']
-    version('master', branch='master', submodules=True)
-    version("0.8.0", sha256="76dde752ce681e0ffa852fd44c9fc7957502382be05a2f0174382de95e3bc593")
-    version('0.7.1', sha256='29f4ad4fe76c42c206c465cc77db38bb86c2bee3aac340266df58352538311e5')
+
+    version('master', branch="master")
 
     # FIXME: Add dependencies if required. Only add the python dependency
     # if you need specific versions. A generic python dependency is
     # added implicity by the PythonPackage class.
-    depends_on('compss', type='run')
     depends_on('python@3.6:', type=('build', 'run'))
-    #depends_on('py-setuptools', type='build')
-    depends_on('py-scikit-learn@0.23.2^py-scipy@1.5.0^py-numpy@1.19.5', type=('run'))
-    #depends_on('py-scikit-learn', type=('run'))
-    #depends_on('py-cvxpy', type=('run'))
+    depends_on('py-setuptools', type='build')
+    depends_on('py-scipy@1.7:', type=('run'))
+    depends_on('py-scikit-learn', type=('run'))
+    depends_on('py-h5py', type=('run'))
+    depends_on('py-torch', type=('run'))
+    depends_on('py-torchaudio', type=('run'))
+    #depends_on('py-torchvision', type=('run'))
 
     def build_args(self, spec, prefix):
         # FIXME: Add arguments other than --prefix
