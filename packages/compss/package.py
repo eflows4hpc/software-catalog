@@ -35,6 +35,7 @@ class Compss(Package):
     version("eflows4hpc", sha256="a85efd592b85fe3392497da85d192e7543e6ac1e8333c6c3f8ca7f0777a54aaf")
     #version("eflows4hpc", sha256="2f187a447074e87989b73d23ca4e855c0123f82bfc4ba31628ccbe6a1517d5f4")
     #version("eflows4hpc", sha256="0251c82cdd4557ed9026f6296f7c475f3d15c3e1fc13edd04c7ff1399328d2b3")
+    version("3.3", sha256="9ebec2be7225bf01cf563d208434cfbaeb988a8cb439b35c3b7c1a231b7cea57")
     version("3.2", sha256="f32825d7f26bde13cd3699f0aea14da18632b30cf08f113a06ae050033efc837", preferred=True)
     version("3.1", sha256="53880443567269faa724d1908a6bc4d82998be3cc93c77386f620c4c8a72e60d")
     version("3.0", sha256="3a84e0c6cd84aea155abf08370b1ad5bf5f65c99d4b17d70346c6457e7d0b215")

@@ -37,6 +37,7 @@ class PyDislib(PythonPackage):
     # notify when the package is updated.
     # maintainers = ['github_user1', 'github_user2']
     version('master', branch='master', submodules=True)
+    version("0.9.0", sha256="2bd3ef6eb3fa14d224f6ae5496f9a28ac2f2821b992a6d7e615637bb89092c9a")
     version("0.8.0", sha256="76dde752ce681e0ffa852fd44c9fc7957502382be05a2f0174382de95e3bc593")
     version('0.7.1', sha256='29f4ad4fe76c42c206c465cc77db38bb86c2bee3aac340266df58352538311e5')
 
