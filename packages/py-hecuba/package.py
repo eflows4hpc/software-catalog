@@ -36,6 +36,16 @@ class PyHecuba(PythonPackage):
         env.set('HECUBA_ROOT', self.prefix)
         env.set('STORAGE_HOME', self.prefix+'/compss')
         env.prepend_path('LD_LIBRARY_PATH', self.prefix+'/lib')
-        env.prepend_path('PYTHONPATH', self.prefix+'/lib/python3.10/site-packages')
+        ## PYVER = calculate_python_version
+        import sys
+        PYVER=str(sys.version_info.major)+'.'+str(sys.version_info.minor)
+        ##  HECUBAVER = cat $HECUBA_ROOT/VERSION.txt
+        with open(self.prefix +'/VERSION.txt') as f:
+            HECUBAVER = f.read()
+        HECUBAVER = HECUBAVER.strip()
+
+        ## Prepare PYTHONPATH $HECUBA_ROOT/lib/python3.10/site-packages/Hecuba-2.1-py3.10-linux-x86_64.egg:$HECUBA_ROOT/lib/python3.10/site-packages
+        env.prepend_path('PYTHONPATH', self.prefix+'/lib/python'+PYVER+'/site-packages')
+        env.prepend_path('PYTHONPATH', self.prefix+'/lib/python'+PYVER+'/site-packages/Hecuba-'+HECUBAVER+'-py'+PYVER+'-linux-x86_64.egg')
         env.prepend_path('CLASSPATH', self.prefix+'/compss/ITF/StorageItf-1.0-jar-with-dependencies.jar')
         env.prepend_path('CPATH', self.prefix+'/include')
