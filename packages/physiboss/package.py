@@ -28,7 +28,7 @@ class Physiboss(MakefilePackage):
 
     # FIXME: Add a proper url for your package's homepage here.
     homepage = "https://www.example.com"
-    git = "https://github.com/sysbio-curie/Invassion_mode_PhysiBoss.git"
+     git = "https://github.com/sysbio-curie/Invasion_model_PhysiBoSS.git" 
 
     # FIXME: Add a list of GitHub accounts to
     # notify when the package is updated.
@@ -39,4 +39,8 @@ class Physiboss(MakefilePackage):
     # FIXME: Add dependencies if required.
     depends_on("flex", type="build")
     depends_on("bison", type="build")
+
+    def install(self, spec, prefix):
+    mkdir(prefix.bin)
+    install("miproj", prefix.bin)
 
