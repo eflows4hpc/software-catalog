@@ -29,11 +29,14 @@ class PyPermedcoe(PythonPackage):
     homepage = "https://pypi.org/project/permedcoe/"
     url = "https://pypi.org/packages/source/p/permedcoe/permedcoe-0.0.12.tar.gz"
 
-    # list of GitHub accounts to notify when the package is updated.
+    # List of GitHub accounts to notify when the package is updated.
     # maintainers = ['github_user1', 'github_user2']
 
-    version("0.0.12", sha256="e385234b3aa5986c724f33b4323d46d0e9fdc6ce3f01ced6d0d657a57ba07503")
+    version(
+        "0.0.12",
+        sha256="e385234b3aa5986c724f33b4323d46d0e9fdc6ce3f01ced6d0d657a57ba07503",
+    )
 
-    depends_on('python@3.8:', type=('build', 'run'))
+    depends_on("python@3.8:", type=("build", "run"))
     depends_on("py-setuptools", type="build")
     depends_on("py-pyyaml", type="run")
