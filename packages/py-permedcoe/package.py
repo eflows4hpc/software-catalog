@@ -26,7 +26,7 @@ from spack.package import *
 class PyPermedcoe(PythonPackage):
     """PyPermedcoe: Personalized Medicine Center of Excellence Building Block base package."""
 
-    homepage = "https://pypi.org/project/permedcoe/"
+    homepage = "https://permedcoe.eu/"
     url = "https://pypi.org/packages/source/p/permedcoe/permedcoe-0.0.12.tar.gz"
 
     # List of GitHub accounts to notify when the package is updated.

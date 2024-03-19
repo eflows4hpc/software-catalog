@@ -22,7 +22,6 @@
 
 import os
 import pathlib
-import site
 import subprocess
 import stat
 import zipfile
@@ -36,11 +35,10 @@ class PermedcoeBbs(BundlePackage):
     homepage = "https://github.com/PerMedCoE/BuildingBlocks"
     version("main")
 
-    depends_on('python@3.8:', type=('build', 'run'))  # depends_on('python@3.10.6:', type=('build', 'run'))
+    depends_on("python@3.8:", type=("build", "run"))
     depends_on("py-setuptools", type="build")
     depends_on("py-pip", type="build")
     depends_on("py-permedcoe", type="run")
-    depends_on("py-pyyaml", type="run")
 
     def install(self, spec, prefix):
 
@@ -48,9 +46,9 @@ class PermedcoeBbs(BundlePackage):
         git = "https://github.com/PerMedCoE/BuildingBlocks/archive/refs/heads/main.zip"
         mkdir(prefix.bin)
         file_name = "main.zip"
-        bbs_zip, _  = urlretrieve(git, filename=file_name)
+        bbs_zip, _ = urlretrieve(git, filename=file_name)
         # Decompress the BBs
-        with zipfile.ZipFile(file_name, 'r') as zip_ref:
+        with zipfile.ZipFile(file_name, "r") as zip_ref:
             zip_ref.extractall(os.getcwd())
 
         # Install all BBs
