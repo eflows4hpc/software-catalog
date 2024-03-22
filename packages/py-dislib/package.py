@@ -47,7 +47,7 @@ class PyDislib(PythonPackage):
     depends_on('compss', type='run')
     depends_on('python@3.6:', type=('build', 'run'))
     #depends_on('py-setuptools', type='build')
-    depends_on('py-scikit-learn@0.23.2^py-scipy@1.5.0^py-numpy@1.19.5', type=('run'))
+    depends_on('py-scikit-learn@1.0.2^py-scipy@1.5.0^py-numpy@1.23.1', type=('run'))
     #depends_on('py-scikit-learn', type=('run'))
     #depends_on('py-cvxpy', type=('run'))
 

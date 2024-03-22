@@ -39,7 +39,6 @@ class Alya(CMakePackage):
     version('master', sha256='a6c216c18f31ca5a16315aa286ef62b340e6bf52f35f9091c0753e916363a9ad')
 
     # FIXME: Add dependencies if required.
-    # depends_on('cuda')
     depends_on('mpi')
 
     def url_for_version(self, version):
