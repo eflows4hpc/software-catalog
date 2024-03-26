@@ -1,0 +1,129 @@
+packages:
+  gcc:
+    externals:
+    - spec: gcc@8.4.0 languages=c,c++,fortran
+      prefix: /usr
+      extra_attributes:
+        compilers:
+          c: /usr/bin/x86_64-linux-gnu-gcc-8
+          cxx: /usr/bin/x86_64-linux-gnu-g++-8
+          fortran: /usr/bin/x86_64-linux-gnu-gfortran-8
+    - spec: gcc@9.4.0 languages=c,c++,fortran
+      prefix: /usr
+      extra_attributes:
+        compilers:
+          c: /usr/bin/x86_64-linux-gnu-gcc-9
+          cxx: /usr/bin/x86_64-linux-gnu-g++-9
+          fortran: /usr/bin/x86_64-linux-gnu-gfortran-9
+  ncurses:
+    externals:
+    - spec: ncurses@6.2.20200212+symlinks+termlib abi=6
+      prefix: /usr
+  curl:
+    externals:
+    - spec: curl@7.68.0+gssapi+ldap+nghttp2
+      prefix: /usr
+  bzip2:
+    externals:
+    - spec: bzip2@1.0.8
+      prefix: /usr
+  perl:
+    externals:
+    - spec: perl@5.30.0~cpanm+open+shared+threads
+      prefix: /usr
+  tar:
+    externals:
+    - spec: tar@1.30
+      prefix: /usr
+  sqlite:
+    externals:
+    - spec: sqlite@3.31.1+fts~functions+rtree
+      prefix: /usr
+  openssl:
+    externals:
+    - spec: openssl@1.1.1f
+      prefix: /usr
+  file:
+    externals:
+    - spec: file@5.38
+      prefix: /usr
+  xz:
+    externals:
+    - spec: xz@5.2.4
+      prefix: /usr
+  m4:
+    externals:
+    - spec: m4@1.4.18
+      prefix: /usr
+  cpio:
+    externals:
+    - spec: cpio@2.13
+      prefix: /usr
+  python:
+    externals:
+    - spec: python@3.8.10+bz2+crypt+ctypes+dbm+lzma+nis+pyexpat+pythoncmd+readline+sqlite3+ssl~tkinter+uuid+zlib
+      prefix: /usr
+  gmake:
+    externals:
+    - spec: gmake@4.2.1
+      prefix: /usr
+  diffutils:
+    externals:
+    - spec: diffutils@3.7
+      prefix: /usr
+  cmake:
+    externals:
+    - spec: cmake@3.16.3
+      prefix: /usr
+  autoconf:
+    externals:
+    - spec: autoconf@2.69
+      prefix: /usr
+  automake:
+    externals:
+    - spec: automake@1.16.1
+      prefix: /usr
+  libtool:
+    externals:
+    - spec: libtool@2.4.6
+      prefix: /usr
+  binutils:
+    externals:
+    - spec: binutils@2.34
+      prefix: /usr
+  pkgconf:
+    externals:
+    - spec: pkgconf@1.6.3
+      prefix: /usr
+  pkg-config:
+    externals:
+    - spec: pkg-config@1.6.3
+      prefix: /usr
+  findutils:
+    externals:
+    - spec: findutils@4.7.0
+      prefix: /usr
+  coreutils:
+    externals:
+    - spec: coreutils@8.30
+      prefix: /usr
+  git:
+    externals:
+    - spec: git@2.25.1~tcltk
+      prefix: /usr
+  openjdk:
+    externals:
+    - spec: openjdk@1.8.0_312
+      prefix: /usr/lib/jvm/java-8/
+  zlib:
+    externals:
+    - spec: zlib@1.2.11
+      prefix: /usr
+  libuuid:
+    externals:
+    - spec: libuuid@2.34
+      prefix: /usr
+  libxml2:
+    externals:
+    - spec: libxml2@2.9.10
+      prefix: /usr
