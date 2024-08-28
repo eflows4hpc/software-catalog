@@ -45,9 +45,10 @@ class PyDislib(PythonPackage):
     # if you need specific versions. A generic python dependency is
     # added implicity by the PythonPackage class.
     depends_on('compss', type='run')
-    depends_on('python@3.6:', type=('build', 'run'))
-    #depends_on('py-setuptools', type='build')
-    depends_on('py-scikit-learn@1.0.2^py-scipy@1.5.0^py-numpy@1.23.1^py-dill@0.3.6', type=('run'))
+    depends_on('python@3.7:', type=('build', 'run'))
+    depends_on('py-setuptools@61.0.0:', type='build')
+    depends_on('py-wheel', type='build')
+    depends_on('py-scikit-learn@1.0.2:^py-scipy@1.3.0:^py-numpy@1.23.1', type=('run'))
     #depends_on('py-scikit-learn', type=('run'))
     #depends_on('py-cvxpy', type=('run'))
 
